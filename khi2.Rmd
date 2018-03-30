@@ -1385,12 +1385,9 @@ Si on fait 20 tests au seuil de 5 % sur des variables toutes indépendantes, o
 
 ---
 
-### Limites inhérentes aux tests NHST
+### Limites inhérentes au test
 
 Tout ou rien : l’hypothèse nulle est une hypothèse d’indépendance totale.
-
---
-
 Pas d’évaluation de la structure ou de l’intensité du lien (intervalles de confiance).
 
 --
