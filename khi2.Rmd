@@ -298,6 +298,17 @@ gen_example_table(c(26, 24, 24, 26))
 
 .center[À cause du *biais d’échantillonnage* !]
 
+
+---
+
+### Le biais d’échantillonnage
+
+Le biais d’échantillonnage est lié au fait qu’on n’a interrogé qu’un échantillon de notre population, et pas la population entière.
+
+La théorie des probabilités nous dit qu’un échantillon de taille suffisante finit par « ressembler » à notre population. Mais une « marge de fluctuation » demeure : c’est le biais d’échantillonnage.
+
+Plus le nombre de personnes interrogées est élevé, plus le biais d’échantillonnage est faible.
+
 --
 
 .center[https://frama.link/khi2]
@@ -313,23 +324,14 @@ Halioticulture : ormeaux
 
 ### Le biais d’échantillonnage
 
-Le biais d’échantillonnage est lié au fait qu’on n’a interrogé qu’un échantillon de notre population, et pas la population entière.
-
-La théorie des probabilités nous dit qu’un échantillon de taille suffisante finit par « ressembler » à notre population. Mais une « marge de fluctuation » demeure : c’est le biais d’échantillonnage.
-
-Plus le nombre de personnes interrogées est élevé, plus le biais d’échantillonnage est faible.
-
----
-
-### Le biais d’échantillonnage
-
 L’objectif du test du χ² est de déterminer si les variations observées dans un tableau croisé (les écarts à l’indépendance) pourraient être dues uniquement au biais d’échantillonnage.
+
+--
 
 #### Conséquence importante et parfois méconnue
 
 Il est inutile de faire un test du χ² si vos données contiennent la totalité de votre population !
 
---
 
 .footnote[
 Julien Gros, « Quantifier en ethnographe », *Genèses* n°108, 2017, https://www.cairn.info/revue-geneses-2017-3-page-129.htm
@@ -403,6 +405,10 @@ gen_example_table(c(25, 25, 25, 25))
 |Vénériculture  |            25|           25|       **50**|
 |**Ensemble**   |        **50**|       **50**|      **100**|
 
+???
+
+Ce tableau fait une hypothèse forte : parmi les personnes interrogées, il y a autant de cérastoculteurs que de vénériculteurs, et autant de personnes qui aiment les deux plats.
+
 --
 
 .center[On doit respecter la *contrainte sur les marges*]
@@ -421,6 +427,10 @@ La contrainte sur les marges signifie qu'on doit retrouver dans les marges du ta
 |Vénériculture  |              |             |       **40**|
 |**Ensemble**   |        **10**|       **90**|      **100**|
 
+
+???
+
+Comment vont se répartir les réponses dans 4 cases restantes si mes deux variables sont indépendantes ?
 
 ---
 
