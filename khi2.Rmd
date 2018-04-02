@@ -1062,7 +1062,7 @@ Il existe de nombreuses interprétations courantes mais **fausses** de
 - ~~C’est le risque de se tromper en rejetant l’hypothèse d’indépendance.~~
 
 .footnote[
-Steven Goodman, *A Dirty Dozen: Twelve P-Value Misconceptions*, Seminars in Hematology, 2008, http://www.perfendo.org/docs/BayesProbability/twelvePvaluemisconceptions.pdf
+Steven Goodman, "A Dirty Dozen: Twelve P-Value Misconceptions", *Seminars in Hematology*, 2008, http://www.perfendo.org/docs/BayesProbability/twelvePvaluemisconceptions.pdf
 ]
 
 ---
@@ -1451,7 +1451,7 @@ de plus en plus souvent remis en cause, notamment avec l’émergence
 actuelle de la statistique dite bayésienne.
 
 .footnote[
-Regina Nuzzo, *Statistical errors*, Nature, 2014,  https://www.nature.com/news/scientific-method-statistical-errors-1.14700
+Regina Nuzzo, "Statistical errors", *Nature*, 2014,  https://www.nature.com/news/scientific-method-statistical-errors-1.14700
 ]
 
 ---
