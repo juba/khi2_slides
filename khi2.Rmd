@@ -3,7 +3,8 @@ title: "Tout ce que vous n'avez jamais voulu savoir sur le χ² sans jamais avoi
 date : "3 avril 2018"
 output:
   xaringan::moon_reader:
-    css: "custom.css"    
+    css: "custom.css"
+    chakra: "libs/remark-latest.min.js"
     nature:
       autoplay: false  
 ---
@@ -89,6 +90,10 @@ Question en sociologie de la réception : lien entre l’âge et le livre pré
 |*Tractatus<br>logico-philosophicus*|        2|       157|        312|        1|
 
 
+???
+
+Les effectifs permettent d'évaluer l'effectif global du tableau et celui des lignes et colonnes.
+
 ---
 
 ### Rappel
@@ -103,8 +108,15 @@ Question en sociologie de la réception : lien entre l’âge et le livre pré
 
 
 
+.small[
 **Lecture :** 97.4 % des 0 à 10 ans préfèrent *Trotro fait du vélo*, contre seulement 18.2 % des 11-40 ans.
+]
 
+--
+
+.footnote[
+Alain Léger, *Dans un tableau, faut-il faire le pourcentage ligne ou le pourcentage colonne ?*, http://alain-leger.lescigales.org/textes/lignecolonne.pdf
+]
 
 ---
 
@@ -145,9 +157,9 @@ Grande enquête en partenariat avec les hypermarchés E. Leclerc Sud-Bretagne.
 
 #### Sujet de l’enquête
 
-Les goûts alimentaires des conchyliculteurs
+Opération de marketing ciblée envers des conchyliculteurs.
 
-Plus précisément, savoir s’il y a un lien entre le type de conchyliculture exercée et le plat préféré.
+Plus précisément, savoir s’il y a un lien entre le type de conchyliculture exercée et le plat préféré afin de mieux calibrer les campagnes de promotion.
 
 --
  
@@ -199,6 +211,12 @@ Plus précisément, savoir s’il y a un lien entre le type de conchyliculture e
 .center[Kouign-amann]
 ]
 
+???
+
+Cérastoculture : coques<br>
+Vénériculture : palourdes<br>
+Pectiniculture : coquilles Saint-Jacques et pétoncles<br>
+Halioticulture : ormeaux
 
 ---
 
@@ -282,6 +300,13 @@ gen_example_table(c(26, 24, 24, 26))
 --
 
 .center[https://frama.link/khi2]
+
+???
+
+Cérastoculture : coques<br>
+Vénériculture : palourdes<br>
+Pectiniculture : coquilles Saint-Jacques et pétoncles<br>
+Halioticulture : ormeaux
 
 ---
 
@@ -485,6 +510,10 @@ Il y a indépendance si les pourcentages ligne sont les mêmes pour toutes les l
 |Vénériculture  |         40 % |        40 % |     **40 %**|
 ]
 
+???
+
+L'indépendance, c'est donc pas les mêmes effectifs dans toutes les cases. Ça veut dire pourcentages ligne et pourcentages colonne égaux entre eux.
+
 ---
 class: center, middle
 
@@ -493,6 +522,8 @@ class: center, middle
 ---
 
 ### L’hypothèse d’indépendance
+
+Comment calculer le tableau qu'on obtiendrait si les deux variables sont indépendantes ?
 
 On va pouvoir calculer le tableau des **pourcentages théoriques** sous
 l’hypothèse d’indépendance :
@@ -782,7 +813,7 @@ class: center, middle
 Le χ² d’un tableau est une mesure de "l’écart à l’indépendance" de ce tableau.
 ]
 
-.footnote[Les formules et le mode de calcul importent peu, c’est le logiciel qui s’en charge.]
+Les formules et le mode de calcul importent peu, c’est le logiciel qui s’en charge.
 
 ---
 class: center, middle, inverse
@@ -823,7 +854,7 @@ Comment savoir si cet écart est dû au biais d’échantillonnage ou à un lien
 1. On part d'un tableau observé.
 2. On calcule ses marges.
 3. On simule un tableau qu'on pourrait obtenir avec les mêmes marges, **sous l'hypothèse d'indépendance**.
-4. On recommence 1, 10, 100 fois...
+4. On recommence 10, 100, 1000 fois...
 
 --
 
@@ -987,6 +1018,10 @@ Croisement entre la pratique du football et le sentiment d’appartenance
 
 L’hypothèse d’indépendance ne peut pas être rejetée.
 
+--
+
+.center[https://frama.link/khi2]
+
 ---
 
 ### Ce que signifie *p*
@@ -1025,6 +1060,9 @@ Il existe de nombreuses interprétations courantes mais **fausses** de
 - ~~C’est la probabilité que l’hypothèse d’indépendance est vraie.~~
 - ~~C’est le risque de se tromper en rejetant l’hypothèse d’indépendance.~~
 
+.footnote[
+Steven Goodman, *A Dirty Dozen: Twelve P-Value Misconceptions*, Seminars in Hematology, 2008, http://www.perfendo.org/docs/BayesProbability/twelvePvaluemisconceptions.pdf
+]
 
 ---
 class: center, middle, inverse
@@ -1063,24 +1101,26 @@ La valeur du *p* dépend des effectifs du tableau.
 
 --
 
-Soit les deux tableaux suivants :
+Exemple sur les deux tableaux suivants :
 
-.compact.pull-left[
+.pull-left[
 |       |   Rouge|   Vert|
 |-------|-------:|------:|
-|Rond   |      10|     20|
-|Carré  |      20|     10|
+|Rond   |      15|     20|
+|Carré  |      20|     15|
 
-.center[χ² = 5.4 ; p = 0.02]
+.center[χ² = 0.91 ; p = 0.34]
 ]
 
-.compact.pull-right[
+--
+
+.pull-right[
 |       |   Rouge|   Vert|
 |-------|-------:|------:|
-|Rond   |     100|    200|
-|Carré  |     200|    100|
+|Rond   |     150|    200|
+|Carré  |     200|    150|
 
-.center[χ² = 65.34 ; p = 0.000…]
+.center[χ² = 13.7 ; p = 0.0002]
 ]
 
 ---
@@ -1151,8 +1191,8 @@ Si on a des effectifs importants, on peut avoir un test significatif avec des di
 .compact.pull-right[
 |       |   Rouge|   Vert|
 |-------|-------:|------:|
-|Rond   |     500|    510|
-|Carré  |    1210|   1200|
+|Rond   |   50000|  51000|
+|Carré  |  121000| 120000|
 ]
 
 
@@ -1169,10 +1209,10 @@ Si on a des effectifs importants, on peut avoir un test significatif avec des di
 .compact.pull-right[
 |       |   Rouge|   Vert|
 |-------|-------:|------:|
-|Rond   |     48 %|    52 %|
-|Carré  |     52 %|    48 %|
+|Rond   |  49.5 %| 50.5 %|
+|Carré  |  50.2 %| 49.8 %|
 
-.center[χ² = 6.01 ; p = 0.01]
+.center[χ² = 14.02 ; p = 0.0001]
 ]
 
 
@@ -1181,6 +1221,10 @@ Si on a des effectifs importants, on peut avoir un test significatif avec des di
 ### Modalités
 
 Le résultat du test dépend du découpage en modalités.
+
+???
+
+À faire directement dans Shiny
 
 --
 
@@ -1228,9 +1272,10 @@ de 55 ans et les plus de 55 ans :
 --
 
 - En général, il est préférable de partir avec un découpage le plus détaillé possible, puis on regroupe éventuellement des modalités ayant un profil semblable.
+
 --
 
-- On ne devrait pas parler d’indépendance entre les variables du tableau croisé, mais plutôt entre les lignes et les colonnes de ce tableau.
+**Conséquence :** on ne devrait pas parler d’indépendance entre les variables du tableau croisé, mais plutôt entre les lignes et les colonnes de ce tableau.
 
 ---
 
@@ -1243,6 +1288,10 @@ Ils permettent de repérer quelles sont les cases dont les effectifs sont sur ou
 Ils sont une aide à la lecture du tableau, notamment si celui-ci est de grande taille.
 
 Ils permettent, notamment sous R, de faire de zoulis graphiques.
+
+???
+
+Exemple shiny : croiser `qualif` et `trav.satisf`.
 
 ---
 class: center, middle, inverse
@@ -1399,6 +1448,10 @@ On peut tester l’absence d’indépendance, mais pas l’indépendance : un 
 Plus généralement, le principe même des tests statistiques dits NHST est
 de plus en plus souvent remis en cause, notamment avec l’émergence
 actuelle de la statistique dite bayésienne.
+
+.footnote[
+Regina Nuzzo, *Statistical errors*, Nature, 2014,  https://www.nature.com/news/scientific-method-statistical-errors-1.14700
+]
 
 ---
 class: center, middle, inverse
