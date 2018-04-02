@@ -5,6 +5,7 @@ output:
   xaringan::moon_reader:
     css: "custom.css"
     chakra: "libs/remark-latest.min.js"
+    smart: true
     nature:
       autoplay: false  
 ---
@@ -314,7 +315,7 @@ Halioticulture : ormeaux
 
 Le biais d’échantillonnage est lié au fait qu’on n’a interrogé qu’un échantillon de notre population, et pas la population entière.
 
-La théorie des probabilités nous dit qu’un échantillon de taille suffisante finit par "ressembler" à notre population. Mais une "marge de fluctuation" demeure : c’est le biais d’échantillonnage.
+La théorie des probabilités nous dit qu’un échantillon de taille suffisante finit par « ressembler » à notre population. Mais une « marge de fluctuation » demeure : c’est le biais d’échantillonnage.
 
 Plus le nombre de personnes interrogées est élevé, plus le biais d’échantillonnage est faible.
 
@@ -331,7 +332,7 @@ Il est inutile de faire un test du χ² si vos données contiennent la totalité
 --
 
 .footnote[
-Julien Gros, "Quantifier en ethnographe", *Genèses* n°108, 2017, https://www.cairn.info/revue-geneses-2017-3-page-129.htm
+Julien Gros, « Quantifier en ethnographe », *Genèses* n°108, 2017, https://www.cairn.info/revue-geneses-2017-3-page-129.htm
 ]
 
 ---
@@ -639,7 +640,7 @@ kable(tab_exp, format="html")
 &nbsp;
 ]
 
-.center[**Comment calculer un "écart" entre les deux ?**]
+.center[**Comment calculer un « écart » entre les deux ?**]
 
 ---
 class: center, middle
@@ -810,7 +811,7 @@ class: center, middle
 #### Ce qu'il faut retenir
 
 .important[
-Le χ² d’un tableau est une mesure de "l’écart à l’indépendance" de ce tableau.
+Le χ² d’un tableau est une mesure de « l’écart à l’indépendance » de ce tableau.
 ]
 
 Les formules et le mode de calcul importent peu, c’est le logiciel qui s’en charge.
@@ -843,7 +844,7 @@ On sait calculer un écart, mais on n’est guère avancé pour autant.
 
 --
 
-Comment savoir si l’écart observé est "grand" ou pas ?
+Comment savoir si l’écart observé est « grand » ou pas ?
 
 Comment savoir si cet écart est dû au biais d’échantillonnage ou à un lien entre les variables ?
 
@@ -946,7 +947,7 @@ Si *p* est faible, on estime que le tableau observé est trop invraisemblable so
 --
 
 .important[
-Rejeter l'hypothèse d'indépendance, c'est considérer que les écarts observés dans le tableau ne sont pas dû uniquement au biais d'échantillonnage, et qu'il y a donc un "lien" entre les deux variables.
+Rejeter l'hypothèse d'indépendance, c'est considérer que les écarts observés dans le tableau ne sont pas dû uniquement au biais d'échantillonnage, et qu'il y a donc un « lien » entre les deux variables.
 ]
 
 --
@@ -1087,11 +1088,11 @@ La valeur du *p* dépend de la taille du tableau.
 
 Deux tableaux qui auraient la même valeur du χ² mais pas le même nombre de cases auraient une valeur de *p* différente.
 
-"Explication" plus ou moins intuitive : plus
+« Explication » plus ou moins intuitive : plus
 le tableau à de cases, plus il y a de sources de variations pour le
 biais d'échantillonnage.
 
-C’est ce qu’on appelle les "degrés de liberté" du test.
+C’est ce qu’on appelle les **degrés de liberté** du test.
 
 ---
 
@@ -1308,9 +1309,9 @@ class: center, middle, inverse
 
 Les logiciels renvoient parfois des messages
 d’avertissement lorsque les effectifs théoriques sont trop faibles dans
-certaines cases. Par exemple : *"pas plus
+certaines cases. Par exemple : *« pas plus
 de 20 % des cases avec un effectif théorique inférieur à 5, pas de case
-avec un effectif théorique inférieur à 1"*.
+avec un effectif théorique inférieur à 1 »*.
 
 
 --
@@ -1339,7 +1340,7 @@ Les critères varient
 
 Parfois, le lien statistique n’est pas un lien
 réel entre les deux variables. Il peut être dû, notamment, à une
-"variable cachée."
+« variable cachée ».
 
 --
 
@@ -1422,7 +1423,7 @@ Le *cherry picking* consiste à faire un grand nombre de tests et à ne conserve
 
 --
 
-**Problème :** plus on fait de tests, plus on risque de trouver un résultat significatif "accidentel".
+**Problème :** plus on fait de tests, plus on risque de trouver un résultat significatif « accidentel ».
 
 --
 
@@ -1441,7 +1442,7 @@ Pas d’évaluation de la structure ou de l’intensité du lien (intervalles de
 
 --
 
-On peut tester l’absence d’indépendance, mais pas l’indépendance : un test du χ² ne permet jamais "d’accepter" l’hypothèse d’indépendance, on peut seulement la rejeter ou "échouer à la rejeter".
+On peut tester l’absence d’indépendance, mais pas l’indépendance : un test du χ² ne permet jamais « d’accepter » l’hypothèse d’indépendance, on peut seulement la rejeter ou « échouer à la rejeter ».
 
 --
 
