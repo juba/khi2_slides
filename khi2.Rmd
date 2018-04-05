@@ -8,6 +8,7 @@ output:
     smart: true
     nature:
       autoplay: false  
+knit: (function(inputFile, encoding) { rmarkdown::render(inputFile, encoding = encoding, output_file = "index.html") })
 ---
 
 ```{r setup, echo=FALSE}
