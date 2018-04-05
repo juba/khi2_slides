@@ -1,0 +1,1849 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tout ce que vous n’avez jamais voulu savoir sur le χ² sans jamais avoir eu envie de le demander</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="custom.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Tout ce que vous n’avez jamais voulu savoir sur le χ² sans jamais avoir eu envie de le demander
+### 3 avril 2018
+
+---
+
+
+
+
+
+---
+class: center, middle, inverse
+
+# Rappel
+
+![rappel](images/rappel.gif)
+
+---
+
+### Rappel 
+
+Question en sociologie de la réception : lien entre l’âge et le livre préféré.
+
+--
+
+|                                   | 0-10 ans| 11-40 ans| 41-90 ans | &gt; 91 ans|
+|-----------------------------------|--------:|---------:|----------:|--------:|
+|*Trotro fait du vélo*              |       74|        35|         72|        3|
+|*Tractatus&lt;br&gt;logico-philosophicus*|        2|       157|        312|        1|
+
+--
+
+.center[Quelle méthode pour décrire le lien entre ces deux variables ?]
+
+---
+
+### Rappel
+
+☐ On regarde le tri croisé en effectifs
+
+☐ On calcule des pourcentages ligne ou colonne
+
+☐ On fait un test du χ²
+
+---
+
+### Rappel
+
+
+☑ On regarde le tri croisé en effectifs
+
+☑ On calcule des pourcentages ligne ou colonne
+
+☐ ~~On fait un test du χ²~~
+
+---
+
+### Rappel
+
+#### Tri croisé en effectifs
+
+|                                   | 0-10 ans| 11-40 ans| 41-90 ans | &gt; 91 ans|
+|-----------------------------------|--------:|---------:|----------:|--------:|
+|*Trotro fait du vélo*              |       74|        35|         72|        3|
+|*Tractatus&lt;br&gt;logico-philosophicus*|        2|       157|        312|        1|
+
+
+???
+
+Les effectifs permettent d'évaluer l'effectif global du tableau et celui des lignes et colonnes.
+
+---
+
+### Rappel
+
+#### Pourcentages colonne
+
+|                                   |  0-10 ans| 11-40 ans| 41-90 ans| &gt; 91 ans|
+|-----------------------------------|---------:|---------:|---------:|--------:|
+|*Trotro fait du vélo*              |     97.4 %|     18.2 %|     18.8 %|      75 %|
+|*Tractatus&lt;br&gt;logico-philosophicus*|      2.6 %|     81.8 %|     81.2 %|      25 %|
+|**Total**                          |  **100 %**|  **100 %**|  **100 %**| **100 %**|
+
+
+
+.small[
+**Lecture :** 97.4 % des 0 à 10 ans préfèrent *Trotro fait du vélo*, contre seulement 18.2 % des 11-40 ans.
+]
+
+--
+
+.footnote[
+Alain Léger, *Dans un tableau, faut-il faire le pourcentage ligne ou le pourcentage colonne ?*, http://alain-leger.lescigales.org/textes/lignecolonne.pdf
+]
+
+---
+
+### Rappel
+
+Lien entre deux variables dans un tableau croisé ➟ pourcentages ligne ou colonne.
+
+--
+
+Le χ² ne sert pas à décrire ou évaluer le lien.
+
+
+Mais alors ça sert à quoi ?
+
+---
+class: center, middle, inverse
+
+# Mise en situation
+
+![enquete](images/survey.gif)
+
+---
+
+### Bonne nouvelle
+
+Vous avez remporté un appel à projet !
+
+--
+
+Grande enquête en partenariat avec les hypermarchés E. Leclerc Sud-Bretagne.
+
+
+.center[![image](images/leclerc.jpg)]
+
+---
+
+### Bonne nouvelle
+
+#### Sujet de l’enquête
+
+Opération de marketing ciblée envers des conchyliculteurs.
+
+Plus précisément, savoir s’il y a un lien entre le type de conchyliculture exercée et le plat préféré afin de mieux calibrer les campagnes de promotion.
+
+--
+ 
+#### Protocole
+
+- Enquête par questionnaire
+- Interrogation de 100 conchyliculteurs à la sortie de plusieurs hypermarchés E. Leclerc de Sud-Bretagne
+ 
+---
+
+### Modalités
+
+#### Conchyliculture
+
+.pull-left.compact[
+.center[![coques](images/coques.png)]
+
+.center[Cérastoculture]
+]
+
+--
+
+.pull-right.compact[
+.center[![palourde](images/palourde.png)]
+
+.center[Vénériculture]
+]
+
+.clear[
+]
+
+--
+
+#### Plat préféré
+
+.pull-left.compact[
+
+.center[![potjevleesch](images/potjevleesch.jpg)]
+
+.center[Potjevleesch]
+]
+
+--
+
+.pull-right.compact[
+
+.center[![kouign amann](images/beurre.jpg)]
+
+.center[Kouign-amann]
+]
+
+???
+
+Cérastoculture : coques&lt;br&gt;
+Vénériculture : palourdes&lt;br&gt;
+Pectiniculture : coquilles Saint-Jacques et pétoncles&lt;br&gt;
+Halioticulture : ormeaux
+
+---
+
+### Résultats à Quimperlé
+
+--
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Potjevleesch &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Kouign-amann &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Cérastoculture &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 50 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Vénériculture &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 50 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+--
+ 
+.center[**Lien ou pas lien ?**]
+
+---
+
+
+### Résultats à Ploërmel
+
+--
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Potjevleesch &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Kouign-amann &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Cérastoculture &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Vénériculture &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+--
+
+.center[**Lien ou pas lien ?**]
+
+---
+
+### Résultats à Riantec
+
+--
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Potjevleesch &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Kouign-amann &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Cérastoculture &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 32 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 18 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Vénériculture &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 18 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 32 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+.center[**Lien ou pas lien ?**]
+
+---
+
+### Résultats à Quéven
+
+--
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Potjevleesch &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Kouign-amann &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Cérastoculture &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 27 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 23 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Vénériculture &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 23 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 27 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+.center[**Lien ou pas lien ?**]
+
+---
+
+### Damned
+
+Nous voilà bien démunis.
+
+--
+
+Heureusement, le test du χ² arrive à notre secours…
+
+--
+
+Mais pourquoi en a-t-on besoin ?
+
+---
+
+### Pourquoi en a-t-on besoin ?
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Potjevleesch &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Kouign-amann &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Cérastoculture &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 24 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Vénériculture &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 24 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+--
+
+.center[À cause du *biais d’échantillonnage* !]
+
+
+---
+
+### Le biais d’échantillonnage
+
+Le biais d’échantillonnage est lié au fait qu’on n’a interrogé qu’un échantillon de notre population, et pas la population entière.
+
+La théorie des probabilités nous dit qu’un échantillon de taille suffisante finit par « ressembler » à notre population. Mais une « marge de fluctuation » demeure : c’est le biais d’échantillonnage.
+
+Plus le nombre de personnes interrogées est élevé, plus le biais d’échantillonnage est faible.
+
+--
+
+.center[https://frama.link/khi2]
+
+???
+
+Cérastoculture : coques&lt;br&gt;
+Vénériculture : palourdes&lt;br&gt;
+Pectiniculture : coquilles Saint-Jacques et pétoncles&lt;br&gt;
+Halioticulture : ormeaux
+
+---
+
+### Le biais d’échantillonnage
+
+L’objectif du test du χ² est de déterminer si les variations observées dans un tableau croisé (les écarts à l’indépendance) pourraient être dues uniquement au biais d’échantillonnage.
+
+--
+
+#### Conséquence importante et parfois méconnue
+
+Il est inutile de faire un test du χ² si vos données contiennent la totalité de votre population !
+
+
+.footnote[
+Julien Gros, « Quantifier en ethnographe », *Genèses* n°108, 2017, https://www.cairn.info/revue-geneses-2017-3-page-129.htm
+]
+
+---
+class: center, middle, inverse
+
+# L’hypothèse d’indépendance
+
+![indépendance](images/independance.gif)
+
+---
+
+### L’hypothèse d’indépendance
+
+#### Qu’est-ce que l’indépendance ?
+
+L’indépendance, c’est quand il n’y a pas de lien entre les deux variables croisées.
+
+--
+
+L’indépendance, c’est quand le fait d’appartenir à une modalité en colonne n’a pas d’influence sur le fait d’appartenir à une modalité en ligne (et réciproquement).
+
+--
+
+#### Exemple
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Potjevleesch &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Kouign-amann &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Cérastoculture &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Vénériculture &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+---
+
+### L’hypothèse d’indépendance
+
+**C’est pas si simple !** 
+
+--
+
+|               | Potjevleesch| Kouign-amann|
+|:--------------|-------------:|------------:|
+|Cérastoculture |            25|           25|
+|Vénériculture  |            25|           25|
+
+
+---
+
+### L’hypothèse d’indépendance
+
+**C’est pas si simple !** 
+
+
+|               | Potjevleesch| Kouign-amann| **Ensemble**|
+|:--------------|-------------:|------------:|------------:|
+|Cérastoculture |            25|           25|       **50**|
+|Vénériculture  |            25|           25|       **50**|
+
+
+
+---
+
+### L’hypothèse d’indépendance
+
+**C’est pas si simple !** 
+
+
+|               | Potjevleesch| Kouign-amann| **Ensemble**|
+|:--------------|-------------:|------------:|------------:|
+|Cérastoculture |            25|           25|       **50**|
+|Vénériculture  |            25|           25|       **50**|
+|**Ensemble**   |        **50**|       **50**|      **100**|
+
+???
+
+Ce tableau fait une hypothèse forte : parmi les personnes interrogées, il y a autant de cérastoculteurs que de vénériculteurs, et autant de personnes qui aiment les deux plats.
+
+--
+
+.center[On doit respecter la *contrainte sur les marges*]
+
+---
+
+### L’hypothèse d’indépendance
+
+La contrainte sur les marges signifie qu'on doit retrouver dans les marges du tableau croisé les *tris à plat* des deux variables.
+
+--
+
+|               | Potjevleesch| Kouign-amann| **Ensemble**|
+|:--------------|-------------:|------------:|------------:|
+|Cérastoculture |              |             |       **60**|
+|Vénériculture  |              |             |       **40**|
+|**Ensemble**   |        **10**|       **90**|      **100**|
+
+
+???
+
+Comment vont se répartir les réponses dans 4 cases restantes si mes deux variables sont indépendantes ?
+
+---
+
+### L’hypothèse d’indépendance
+
+#### Rappel 
+
+Il y a indépendance si l’appartenance à une modalité
+en ligne de notre tableau n’a pas d’influence sur la modalité en
+colonnes.
+
+#### Conséquence
+
+Il y a indépendance si les pourcentages ligne sont les mêmes pour toutes les lignes.
+
+---
+
+### L’hypothèse d’indépendance
+
+
+#### Pourcentages ligne
+
+.compact[
+|               | Potjevleesch| Kouign-amann|
+|:--------------|-------------:|------------:|
+|Cérastoculture |              |             |
+|Vénériculture  |              |             |
+|**Ensemble**   |      **10 %**|     **90 %**|
+]
+
+---
+
+### L’hypothèse d’indépendance
+
+#### Pourcentages ligne
+
+.compact[
+|               | Potjevleesch| Kouign-amann|
+|:--------------|-------------:|------------:|
+|Cérastoculture |        10 %  |       90 %  |
+|Vénériculture  |        10 %  |       90 %  |
+|**Ensemble**   |      **10 %**|     **90 %**|
+]
+
+---
+
+### L’hypothèse d’indépendance
+
+#### Pourcentages ligne
+
+.compact[
+|               | Potjevleesch| Kouign-amann|
+|:--------------|-------------:|------------:|
+|Cérastoculture |        10 %  |       90 %  |
+|Vénériculture  |        10 %  |       90 %  |
+|**Ensemble**   |      **10 %**|     **90 %**|
+]
+
+#### Pourcentages colonne
+
+.compact[
+|               | Potjevleesch| Kouign-amann| **Ensemble**|
+|:--------------|-------------:|------------:|------------:|
+|Cérastoculture |              |             |     **60 %**|
+|Vénériculture  |              |             |     **40 %**|
+]
+
+---
+
+### L’hypothèse d’indépendance
+
+#### Pourcentages ligne
+
+.compact[
+|               | Potjevleesch| Kouign-amann|
+|:--------------|-------------:|------------:|
+|Cérastoculture |        10 %  |       90 %  |
+|Vénériculture  |        10 %  |       90 %  |
+|**Ensemble**   |      **10 %**|     **90 %**|
+]
+
+#### Pourcentages colonne
+
+.compact[
+|               | Potjevleesch| Kouign-amann| **Ensemble**|
+|:--------------|-------------:|------------:|------------:|
+|Cérastoculture |         60 % |        60 % |     **60 %**|
+|Vénériculture  |         40 % |        40 % |     **40 %**|
+]
+
+???
+
+L'indépendance, c'est donc pas les mêmes effectifs dans toutes les cases. Ça veut dire pourcentages ligne et pourcentages colonne égaux entre eux.
+
+---
+class: center, middle
+
+![parenthèse](images/parenthese_open.gif)
+
+---
+
+### L’hypothèse d’indépendance
+
+Comment calculer le tableau qu'on obtiendrait si les deux variables sont indépendantes ?
+
+On va pouvoir calculer le tableau des **pourcentages théoriques** sous
+l’hypothèse d’indépendance :
+
+|               | Potjevleesch| Kouign-amann| **Ensemble**|
+|:--------------|-------------:|------------:|------------:|
+|Cérastoculture |          ? % |             |     **60 %**|
+|Vénériculture  |              |             |     **40 %**|
+|**Ensemble**   |      **10 %**|     **90 %**|    **100 %**|
+
+
+--
+
+`$$?\% = 60\% \times 10\% = 6\%$$`
+
+---
+
+### L’hypothèse d’indépendance
+
+#### Pourcentages théoriques
+
+.compact[
+|               | Potjevleesch| Kouign-amann| **Ensemble**|
+|:--------------|-------------:|------------:|------------:|
+|Cérastoculture |           6 % |        54 %  |      **60 %**|
+|Vénériculture  |           4 % |        36 %  |      **40 %**|
+|**Ensemble**   |       **10 %**|      **90 %**|     **100 %**|
+]
+
+--
+
+#### Effectifs théoriques
+
+On multiplie par le nombre de personnes interrogées :
+
+.compact[
+|               | Potjevleesch| Kouign-amann| **Ensemble**|
+|:--------------|-------------:|------------:|------------:|
+|Cérastoculture |          14.4|        129.6|      **144**|
+|Vénériculture  |           9.6|        86.4 |       **96**|
+|**Ensemble**   |        **24**|      **216**|     **240** |
+]
+
+---
+class: center, middle
+
+![parenthese](images/parenthese_close.gif)
+
+---
+
+### Récapitulatif
+
+#### Définition de l’indépendance entre lignes et colonnes d’un tableau croisé
+
+Le fait d’appartenir à une ligne n’a pas d’influence sur la colonne d’appartenance (et réciproquement).
+
+⇔ Les pourcentages ligne du tableau croisé sont tous identiques.
+ 
+⇔ Les pourcentages colonne du tableau croisé sont tous identiques.
+
+--
+
+#### Calcul du tableau croisé sous l’hypothèse d’indépendance
+
+- Contrainte sur les marges.
+- Calcul des pourcentages théoriques à partir des marges, puis calcul  des effectifs théoriques.
+- *C’est le logiciel qui s’en occupe*
+
+
+---
+class: center, middle, inverse
+
+# Mesurer l’écart à l’indépendance
+
+
+![mesure](images/mesure.gif)
+
+
+---
+
+### L’écart à l’indépendance
+
+Du tableau croisé suivant, qui croise sexe et sentiment d’appartenir à
+une classe sociale :
+
+.compact[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Oui &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Non &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; NSP &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Homme &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 446 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 445 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Femme &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 490 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 592 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 19 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+--
+
+On sait calculer le tableau croisé théorique sous
+l’hypothèse d’indépendance :
+
+.compact[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Oui &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Non &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; NSP &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Homme &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 420.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 466.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12.1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Femme &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 515.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 570.9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14.9 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+--
+
+.clear[
+&amp;nbsp;
+]
+
+.center[**Comment calculer un « écart » entre les deux ?**]
+
+---
+class: center, middle
+
+![parenthese](images/parenthese_open.gif)
+
+
+---
+
+### L’écart à l’indépendance
+
+.pull-left.compact[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Oui &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Non &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; NSP &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Homme &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 446 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 445 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Femme &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 490 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 592 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 19 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+&lt;div style="position: absolute; top: 23%; left: 48.5%; font-size: 80px;"&gt;
+
+&lt;/div&gt;
+
+.pull-right.compact[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Oui &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Non &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; NSP &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Homme &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 420.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 466.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12.1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Femme &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 515.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 570.9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14.9 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+---
+
+### L’écart à l’indépendance
+
+.pull-left.compact[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Oui &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Non &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; NSP &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Homme &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 446 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 445 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Femme &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 490 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 592 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 19 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+&lt;div style="position: absolute; top: 20%; left: 48.5%; font-size: 80px;"&gt;
+-
+&lt;/div&gt;
+
+.pull-right.compact[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Oui &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Non &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; NSP &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Homme &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 420.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 466.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12.1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Femme &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 515.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 570.9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14.9 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+--
+
+.clear[
+]
+
+&lt;div style="font-size: 70px; margin-bottom: -3rem;"&gt;
+.center[=]
+&lt;/div&gt;
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Oui &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Non &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; NSP &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Homme &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -21.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -4.1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Femme &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -25.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 21.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.1 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+---
+
+
+### L’écart à l’indépendance
+
+On a notre tableau d’écarts :
+
+.compact[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Oui &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Non &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; NSP &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Homme &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -21.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -4.1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Femme &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -25.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 21.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.1 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+On n’a plus qu’à faire la somme !
+
+--
+
+**Problème :** la somme fait toujours 0.
+
+--
+
+**Solution :** On élève les écarts au carré.
+
+`$$(\text{Effectif observé} - \text{Effectif théorique})^2$$`
+
+---
+
+### L’écart à l’indépendance
+
+
+.pull-left.compact[
+
+.center[Effectifs théoriques]
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Oui &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Non &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; NSP &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Homme &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 420.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 466.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12.1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Femme &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 515.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 570.9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 14.9 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+
+.pull-right.compact[
+
+.center[Écarts]
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Oui &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Non &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; NSP &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Homme &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -21.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -4.1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Femme &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -25.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 21.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.1 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.clear[
+&amp;nbsp;
+]
+--
+
+**Problème :** on additionne des choux et des carottes !
+
+--
+
+**Solution :** on divise par les effectifs théoriques.
+$$\frac{ ( \text{Effectif observé} - \text{Effectif théorique})^2}{\text{Effectif théorique}} = \text{$\chi^2$ partiel}$$
+
+
+---
+
+### Statistique du χ² 
+
+On calcule les χ² partiels pour notre tableau :
+
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Oui &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Non &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; NSP &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Homme &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.52 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.96 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.39 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Femme &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.24 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.78 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.13 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+--
+
+On en déduit la valeur de la **statistique du χ²** pour l’ensemble de notre tableau :
+
+.center[
+χ² du tableau = somme des χ² partiels = 7.06
+]
+
+--
+
+.center.middle[https://frama.link/khi2]
+
+---
+class: center, middle
+
+![parenthese](images/parenthese_close.gif)
+
+
+---
+
+### Récapitulatif
+
+--
+
+1. On sait ce que signifie l’hypothèse d’indépendance entre deux variables qualitatives dans un tableau croisé.
+
+2. On sait calculer le tableau d’effectifs théoriques sous l’hypothèse d’indépendance.
+
+3. On sait calculer un écart entre nos effectifs théoriques et nos effectifs observés : c’est le χ² de notre tableau croisé.
+
+--
+
+#### Ce qu'il faut retenir
+
+.important[
+Le χ² d’un tableau est une mesure de « l’écart à l’indépendance » de ce tableau.
+]
+
+Les formules et le mode de calcul importent peu, c’est le logiciel qui s’en charge.
+
+---
+class: center, middle, inverse
+
+
+# Le test du χ²
+
+![indecision](images/indecision.gif)
+
+---
+
+### Le test du χ²
+
+.compact[
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Oui &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Non &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; NSP &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Homme &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 446 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 445 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Femme &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 490 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 592 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 19 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.center[
+χ² = 7.06
+]
+
+--
+
+On sait calculer un écart, mais on n’est guère avancé pour autant.
+
+--
+
+Comment savoir si l’écart observé est « grand » ou pas ?
+
+Comment savoir si cet écart est dû au biais d’échantillonnage ou à un lien entre les variables ?
+
+---
+
+### Simulations
+
+1. On part d'un tableau observé.
+2. On calcule ses marges.
+3. On simule un tableau qu'on pourrait obtenir avec les mêmes marges, **sous l'hypothèse d'indépendance**.
+4. On recommence 10, 100, 1000 fois...
+
+--
+
+C’est compliqué à faire avec des questionnaires et un crayon, mais
+c’est facile à faire avec un ordinateur.
+
+.center[https://frama.link/khi2]
+
+
+---
+
+### Résultats
+
+En effectuant ces simulations, on peut observer la distribution des valeurs du χ² obtenues **sous l’hypothèse d’indépendance**.
+
+--
+
+On peut donc comparer ces valeurs obtenues **sous l’hypothèse d’indépendance** avec la valeur du χ² pour notre tableau croisé observé.
+
+--
+
+On constate qu’environ 3 % des valeurs obtenues lors de cette simulation sont supérieures à notre valeur observée.
+
+--
+
+#### Conclusion
+
+Sous l’hypothèse d’indépendance des variables du tableau croisé, je n’ai que 3 % de chances d’obtenir une valeur du χ² au moins aussi grande que celle de mon tableau observé.
+
+--
+
+Ce pourcentage, c’est le fameux *p* (la *p-value*) !
+
+---
+
+### Récapitulons
+
+Le test du χ² se déroule en deux temps :
+
+1. On calcule la valeur du χ² pour notre tableau croisé. Cette valeur est une mesure de l’écart entre les effectifs observés et les effectifs théoriques sous l’hypothèse d’indépendance.
+2. À partir du χ² du tableau, on en déduit la valeur du *p* correspondant.
+
+--
+
+#### Interprétation du *p*
+
+.important[
+C’est la probabilité, sous l’hypothèse d’indépendance, d’obtenir une valeur égale ou plus grande que le χ² du tableau observé.
+]
+
+*p* est un nombre compris entre 0 et 1. On l'exprime sous forme de nombre décimal (0.03) ou sous forme de pourcentage (3 %).
+
+---
+
+### Stop aux simulateurs !
+
+En réalité, le test du χ² n’utilise pas de simulation,
+notamment car quand Karl Pearson l’a inventé en 1900, les ordinateurs
+étaient assez rares.
+
+Il s’appuie sur une démonstration
+mathématique qui montre que sous l’hypothèse d’indépendance, la valeur
+du χ² d’un tableau suit sous certaines conditions une
+loi statistique connue appelée *loi du χ² *.
+
+À partir de cette loi, on peut calculer pour tout tableau croisé, la
+probabilité d’obtenir une valeur du χ² supérieure ou égale à
+celle observée sous l’hypothèse d’indépendance.
+
+Cette probabilité est notée *p*. Elle s’interprète de la même manière,
+qu’elle soit calculée statistiquement ou simulée.
+
+---
+class: center, middle, inverse
+
+# Interprétation du *p*
+
+![truth](images/truth.gif)
+
+---
+
+### Valeur de *p*
+
+*p* est donc la probabilité d’obtenir une valeur au moins aussi grande
+que le χ² du tableau observé sous l’hypothèse d’indépendance.
+
+Si *p* est faible, on estime que le tableau observé est trop invraisemblable sous l’hypothèse d’indépendance pour l'accepter : on la rejette.
+
+--
+
+.important[
+Rejeter l'hypothèse d'indépendance, c'est considérer que les écarts observés dans le tableau ne sont pas dû uniquement au biais d'échantillonnage, et qu'il y a donc un « lien » entre les deux variables.
+]
+
+--
+
+Pour trancher, on fixe un seuil (en général nommé `\(\alpha\)`).
+
+---
+
+### Valeur de *p*
+
+Le seuil `\(\alpha\)` à partir duquel on rejettera l’hypothèse
+d’indépendance est souvent fixé à `\(\alpha\)` = 0.05 (ou 5 %). C’est une
+convention qui n’a aucun fondement statistique particulier.
+
+--
+
+- **Si p = 0.04**, alors j’ai 4 % de chances d’obtenir un χ² aussi grand sous l’hypothèse d’indépendance. Je peux donc rejeter cette hypothèse et considérer qu’il y a une dépendance, un lien entre mes variables. On dit souvent dans ce cas que le test est significatif.
+--
+
+- **Si p = 0.001**, alors j’ai une chance sur mille d’obtenir un χ² aussi grand. Je peux donc là aussi considérer qu’il y a une dépendance entre mes variables. Le test est significatif.
+--
+
+- **Si p = 0.2**, alors j’ai une chance sur cinq d’obtenir un χ² aussi grand sous l'hypothèse d'indépendance, uniquement à cause du biais d'échantillonnage. Je ne peux donc pas rejeter cette hypothèse.
+
+---
+
+### Exemples
+
+Croisement entre la PCS du père et le fait d’avoir été élevé seul par sa
+mère (*Histoire de vie*, 2003) :
+
+.compact[
+|               |  Mère seule |   Autre |         
+|---------------|------------:|--------:|
+|Agriculteur    |          22 |     990 |         
+|Indépendant    |          50 |     801 |         
+|Cadre          |          60 |     572 |         
+|Intermédiaire  |          57 |     800 |         
+|Employé        |          50 |     690 |         
+|Ouvrier        |         161 |    2861 |         
+]
+
+.center[*p* = 0.00000001726]
+
+--
+
+J’ai une chance sur plus de 57 000 000 d’obtenir un
+χ² au moins aussi élevé sous l’hypothèse d’indépendance. 
+Je rejette cette hypothèse.
+
+---
+
+### Exemples
+
+Croisement entre la pratique du football et le sentiment d’appartenance
+à une classe sociale (*Histoire de vie*, 2003) :
+
+.compact[
+|                    | Pratique |  Ne pratique pas|          
+|--------------------|---------:|----------------:|
+|Appartenance        |       93 |             3921|          
+|Pas d’appartenance  |       92 |             4165|          
+|Ne sait pas         |        1 |              131|          
+]
+
+.center[*p* = 0.4619]
+
+--
+
+L’hypothèse d’indépendance ne peut pas être rejetée.
+
+--
+
+.center[https://frama.link/khi2]
+
+---
+
+### Ce que signifie *p*
+
+Pour rappel, la signification de *p* est la suivante :
+
+&gt; C’est la probabilité d’obtenir une valeur au moins aussi grande que le χ² du tableau sous l’hypothèse d’indépendance.
+
+.important[
+*p* ne signifie rien d’autre que cela !
+]
+
+--
+
+Il existe de nombreuses interprétations courantes mais **fausses** de
+*p* :
+
+- C’est la probabilité que l’hypothèse d’indépendance est vraie.
+- C’est le risque de se tromper en rejetant l’hypothèse d’indépendance.
+
+---
+
+### Ce que signifie *p*
+
+Pour rappel, la signification de *p* est la suivante :
+
+&gt; C’est la probabilité d’obtenir une valeur au moins aussi grande que le χ² du tableau sous l’hypothèse d’indépendance.
+
+.important[
+*p* ne signifie rien d’autre que cela !
+]
+
+Il existe de nombreuses interprétations courantes mais **fausses** de
+*p* :
+
+- ~~C’est la probabilité que l’hypothèse d’indépendance est vraie.~~
+- ~~C’est le risque de se tromper en rejetant l’hypothèse d’indépendance.~~
+
+.footnote[
+Steven Goodman, "A Dirty Dozen: Twelve P-Value Misconceptions", *Seminars in Hematology*, 2008, http://www.perfendo.org/docs/BayesProbability/twelvePvaluemisconceptions.pdf
+]
+
+---
+class: center, middle, inverse
+
+# Règles d’interprétation du test
+
+![rules](images/rules.gif)
+
+---
+
+### Symétrie
+
+Le test du χ² est *symétrique*.
+
+Si on inverse lignes et colonnes, le résultat sera le même.
+
+---
+
+### Taille du tableau
+
+La valeur du *p* dépend de la taille du tableau.
+
+Deux tableaux qui auraient la même valeur du χ² mais pas le même nombre de cases auraient une valeur de *p* différente.
+
+« Explication » plus ou moins intuitive : plus
+le tableau à de cases, plus il y a de sources de variations pour le
+biais d'échantillonnage.
+
+C’est ce qu’on appelle les **degrés de liberté** du test.
+
+---
+
+### Effectifs
+
+La valeur du *p* dépend des effectifs du tableau.
+
+--
+
+Exemple sur les deux tableaux suivants :
+
+.pull-left[
+|       |   Rouge|   Vert|
+|-------|-------:|------:|
+|Rond   |      15|     20|
+|Carré  |      20|     15|
+
+.center[χ² = 0.91 ; p = 0.34]
+]
+
+--
+
+.pull-right[
+|       |   Rouge|   Vert|
+|-------|-------:|------:|
+|Rond   |     150|    200|
+|Carré  |     200|    150|
+
+.center[χ² = 13.7 ; p = 0.0002]
+]
+
+---
+
+### Effectifs
+
+Deux conséquences importantes :
+
+Si mon *p* n’est pas significatif, cela ne veut pas dire
+qu’il n’y a pas de lien entre les variables, c’est peut-être juste que
+mes effectifs sont insuffisants pour le montrer statistiquement.
+
+--
+
+.important[
+Quand on fait un test du χ², on n'accepte jamais l'hypothèse d'indépendance.
+]
+
+
+---
+
+### Interprétation du *p*
+
+Autre conséquence importante des deux règles précédentes : la valeur du
+χ²  et la valeur du *p* **ne sont pas** des
+indicateurs de l’intensité du lien entre les variables.
+
+--
+
+Par conséquent, **il est faux** de dire :
+
+- Le *p* pour ce tableau est très petit, l’intensité du lien entre les deux variables est donc très fort.
+- Le *p* du tableau 1 est plus petit que celui du tableau 2, l’intensité du lien entre les variables du tableau 1 est donc plus forte que celui entre les variables du tableau 2.
+
+---
+
+### Interprétation du *p*
+
+Conséquence très importante des deux règles précédentes : la valeur du
+χ²  et la valeur du *p* **ne sont pas** des
+indicateurs de l’intensité du lien entre les variables.
+
+Par conséquent, **il est faux** de dire :
+
+- ~~Le *p* pour ce tableau est très faible, l’intensité du lien entre les deux variables est donc très fort.~~
+- ~~Le *p* du tableau 1 est plus petit que celui du tableau 2, l’intensité du lien entre les variables du tableau 1 est donc plus forte que celui entre les variables du tableau 2.~~
+
+--
+
+.important[
+Ce qui indique la force du lien, ce sont les différences entre les pourcentages ligne ou colonne.
+]
+
+Si on a des effectifs importants, on peut avoir un test significatif avec des différences de pourcentages très faibles.
+
+---
+
+### Interprétation du *p*
+
+
+.compact.pull-left[
+|       |   Rouge|   Vert|
+|-------|-------:|------:|
+|Rond   |       4|      8|
+|Carré  |       7|      3|
+]
+
+.compact.pull-right[
+|       |   Rouge|   Vert|
+|-------|-------:|------:|
+|Rond   |   50000|  51000|
+|Carré  |  121000| 120000|
+]
+
+
+
+.compact.pull-left[
+|       |   Rouge|   Vert|
+|-------|-------:|------:|
+|Rond   |     33 %|    67 %|
+|Carré  |     70 %|    30 %|
+
+.center[χ² = 1.65 ; p = 0.2]
+]
+
+.compact.pull-right[
+|       |   Rouge|   Vert|
+|-------|-------:|------:|
+|Rond   |  49.5 %| 50.5 %|
+|Carré  |  50.2 %| 49.8 %|
+
+.center[χ² = 14.02 ; p = 0.0001]
+]
+
+
+---
+
+### Modalités
+
+Le résultat du test dépend du découpage en modalités.
+
+???
+
+À faire directement dans Shiny
+
+--
+
+**Exemple :** croisement entre l’âge et le fait de préférer les séries
+ou feuilletons comme programme télévisé (*Histoire de vie*, 2003).
+
+.compact[
+|            |  Séries  |Autres| 
+|------------|---------:|-----:|
+|25 et moins |   20.4 %  | 79.6 %|
+|26-35       |   9.8 %   | 90.2 %|
+|36-45       |   7.5 %   | 92.5 %|
+|46-55       |   7.5 %   | 92.5 %|
+|56-65       |   8.1 %   | 91.9 %|
+|66 et plus  |   12.5 %  | 87.5 %|
+]
+
+
+.center[χ² = 140.4 ; *p* = 0.00000000...]
+
+---
+
+### Modalités
+
+On décide de regrouper les modalités de manière à différencier les moins
+de 55 ans et les plus de 55 ans :
+
+
+|            |  Séries  |Autres| 
+|------------|---------:|-----:|
+|55 et moins |   10.0 %  | 90.0 %|
+|56 et plus  |   10.5 %  | 89.5 %|
+
+--
+
+.center[χ² = 0.47 ; *p* = 0.49]
+
+
+---
+
+### Modalités
+
+- En regroupant des modalités aux profils différents, on a masqué les écarts à l’indépendance.
+- Dit autrement, en regroupant des populations hétérogènes, on a créé des populations homogènes.
+--
+
+- En général, il est préférable de partir avec un découpage le plus détaillé possible, puis on regroupe éventuellement des modalités ayant un profil semblable.
+
+--
+
+**Conséquence :** on ne devrait pas parler d’indépendance entre les variables du tableau croisé, mais plutôt entre les lignes et les colonnes de ce tableau.
+
+---
+
+### Résidus
+
+Le test du χ² évalue l’écart à l’indépendance pour l’ensemble du tableau, **les résidus du test du χ²** font la même chose au niveau de chaque case.
+
+Ils permettent de repérer quelles sont les cases dont les effectifs sont sur ou sous-représentés de manière statistiquement significative.
+
+Ils sont une aide à la lecture du tableau, notamment si celui-ci est de grande taille.
+
+Ils permettent, notamment sous R, de faire de zoulis graphiques.
+
+???
+
+Exemple shiny : croiser `qualif` et `trav.satisf`.
+
+---
+class: center, middle, inverse
+
+# Limites du test du χ² 
+
+![limites](images/limites.gif)
+
+---
+
+### Fausse limite : effectifs théoriques trop faibles
+
+#### Problème
+
+Les logiciels renvoient parfois des messages
+d’avertissement lorsque les effectifs théoriques sont trop faibles dans
+certaines cases. Par exemple : *« pas plus
+de 20 % des cases avec un effectif théorique inférieur à 5, pas de case
+avec un effectif théorique inférieur à 1 »*.
+
+
+--
+
+#### Raison
+
+Lorsque les effectifs théoriques sont trop faibles,
+l’approximation mathématique de la loi du χ² est moins
+bonne.
+
+--
+
+#### Solution 
+
+Simulations ! Très simple avec R (option `simulate.p.value` de `chisq.test`).
+
+???
+
+Les critères varient
+
+---
+
+### Vraie limite : variables cachées
+
+#### Problème 
+
+Parfois, le lien statistique n’est pas un lien
+réel entre les deux variables. Il peut être dû, notamment, à une
+« variable cachée ».
+
+--
+
+#### Solution
+
+Une solution possible peut être de refaire le test
+sur des sous-populations.
+
+---
+
+### Vraie limite : variables cachées
+
+**Exemple :** croisement du fait de pratiquer la couture (en
+ligne) et du fait d’avoir déjà tenu un journal intime (en colonne).
+
+.compact[
+|         |  Journal|    Non|
+|---------|--------:|------:|
+|Non      |    16.7 %|  83.3 %|
+|Couture  |    24.6 %|  75.4 %|
+
+.center[χ² = 49.7 ; *p* = 0.000...]
+]
+
+--
+
+.compact.pull-left[
+.center[**Seulement chez les hommes**]
+
+|         |  Journal|    Non|
+|---------|--------:|------:|
+|Non      |     7.6 %|  92.4 %|
+|Couture  |     7.1 %|  92.9 %|
+
+.center[χ² = 0.009 ; *p* = 1]
+]
+
+.compact.pull-right[
+.center[**Seulement chez les femmes**]
+
+|         |  Journal|    Non|
+|---------|--------:|------:|
+|Non      |    27.2 %|  72.8 %|
+|Couture  |    25.0 %|  75.0 %|
+
+.center[χ² = 2.41 ; *p* = 0.12]
+]
+
+---
+
+### Vraie limite : corrélation n'est pas causalité
+
+.center[
+Lien statistique `\(\neq\)` causalité !
+]
+
+--
+
+.center[![image](images/spurious_correlation.png)]
+
+.center[&lt;http://www.tylervigen.com/&gt;]
+
+---
+
+### Vraie limite : corrélation n'est pas causalité
+
+.center[
+Lien statistique `\(\neq\)` causalité !
+]
+
+.center[![image](images/correlation.png)]
+
+.center[&lt;http://xkcd.com/552/&gt;]
+
+---
+
+### Vraie limite : la cueillette des cerises
+
+Le *cherry picking* consiste à faire un grand nombre de tests et à ne conserver que ce qui nous intéresse.
+
+--
+
+**Problème :** plus on fait de tests, plus on risque de trouver un résultat significatif « accidentel ».
+
+--
+
+Si on fait 20 tests au seuil de 5 % sur des variables toutes indépendantes, on a 65 % de chances de trouver au moins un test significatif seulement dû au biais d’échantillonnage.
+
+--
+
+.center[&lt;http://xkcd.com/882/&gt;]
+
+---
+
+### Limites inhérentes au test
+
+Tout ou rien : l’hypothèse nulle est une hypothèse d’indépendance totale.
+Pas d’évaluation de la structure ou de l’intensité du lien (intervalles de confiance).
+
+--
+
+On peut tester l’absence d’indépendance, mais pas l’indépendance : un test du χ² ne permet jamais « d’accepter » l’hypothèse d’indépendance, on peut seulement la rejeter ou « échouer à la rejeter ».
+
+--
+
+Plus généralement, le principe même des tests statistiques dits NHST est
+de plus en plus souvent remis en cause, notamment avec l’émergence
+actuelle de la statistique dite bayésienne.
+
+.footnote[
+Regina Nuzzo, "Statistical errors", *Nature*, 2014,  https://www.nature.com/news/scientific-method-statistical-errors-1.14700
+]
+
+---
+class: center, middle, inverse
+
+# Ouf !
+
+![ouf](images/ouf.gif)
+
+---
+class: center, middle, inverse
+
+# Ouf !
+
+C’est fini !
+    </textarea>
+<script src="libs/remark-latest.min.js"></script>
+<script>var slideshow = remark.create();
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+});
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
